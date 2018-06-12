@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	<!-- Exercise_1 -->
+
+	is_array = function(input) {
+		if (toString.call(input) === "[object Array]")
+			return true;
+			return false;
+	}
+console.log(is_array('w3resource'));
+console.log(is_array([1, 2, 4, 0]));
+	
+
+// Exercise_2
+array_Clone = function(shaheed) {
+ return shaheed.slice(0);
+    };
+console.log(array_Clone([1, 2, 4, 0]));
+
+// Exercise_3
+function first(arr, n) {
+             if ( arr == null )
+             	return [];
+             if ( n == null )
+             	return arr[0];
+             if ( n < 0)
+             	return [];
+
+             return arr.slice(0,n);
+    	}
+ 
+        console.log(first([7, 9, 0, -2],2));
+
+
+ // Exercise_4
+function last (arr, n) {
+		  if (arr == null) 
+		    return void 0;
+		  if (n == null) 
+		     return arr[arr.length - 1];
+		  return arr.slice(Math.max(arr.length - n, 0));  
+		  };
+
+		console.log(last([7, 9, 0, -2]));
+		console.log(last([7, 9, 0, -2],3));
+		console.log(last([7, 9, 0, -2],6));
+// Exercise_5
+
+myColor = ["Red", "Green", "White", "Black"];
+console.log(myColor.toString())
+console.log(myColor.join(' '))
+console.log(myColor.join('+'))
+
+// Exercise_6
+
+    	var num = prompt('Enter number','678');
+    	var str = num.toString();
+    	var result = [str[0]];
+
+    	for(var x=1; x<str.length; x++)
+		{
+		    if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+		     {
+		      result.push('-', str[x]);
+		     }
+		    else
+		     {
+		      result.push(str[x]);
+		     }
+		}
+		console.log(result.join(''));
+
+
+// Exercise_7
+
+
+		var shahid = [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+		 console.log(shahid.sort(function(a,b){return a-b})) //ascending
+		 console.log(shahid.sort(function(a,b){return b-a})) //descending
+
+//Exercise 8
+
+
+    	var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]; 
+        var maxItem, max = 0;
+        var mf = 1;
+      
+        for ( var i = 0; i < arr1.length; i++)
+        {
+            for( var j = i; j<arr1.length; j++)
+            {	
+            	if (arr1[i] == arr1[j])
+            	max++;
+	            if(mf < max)
+	            {
+	            	mf = max;
+	            	maxItem = arr1[i];
+	            }
+	        } 
+	      max = 0;
+        }
+       
+
+    //Exercise_9
+
+
+            str = 'The Quick Brown Fox';
+		var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+		var result = [];
+		  
+		  for(var x=0; x<str.length; x++)
+		  {
+		    if(UPPER.indexOf(str[x]) !== -1)
+		    {
+		      result.push(str[x].toLowerCase());
+		    }
+		    else if(LOWER.indexOf(str[x]) !== -1)
+		    {
+		      result.push(str[x].toUpperCase());
+		    }
+		    else 
+		    {
+		      result.push(str[x]);
+		    }
+		  }
+		console.log(result.join(''));  
+
+
+		// Exercise_10
+
+        var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+
+	       for (var i in a)
+	       {
+		       	console.log('row ' + i);
+		       	for( var j in a[i])
+		       	{
+		       		console.log(a[i][j]);
+		       	}
+	       } 
+
+
+// Exercise_11
+         var numArray = [0,1,2,3,4];
+
+         function sumOfSquares(arr) {
+             var sum = 0;
+
+          for ( var i = 0; i < arr.length; i++)
+          {
+          	sum += Math.pow(arr[i],2);
+          }
+          console.log('Sum of squares = '+sum);
+         }
+
+         sumOfSquares(numArray);
+
+// Exercise_13
+
+
+    	console.log('\nExercise 13');
+    	var x = 0;
+var array = Array();
+
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text1").value;
+ alert("Element: " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text1").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += "Element " + y + " = " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+
+
+
+// Exercise_14
+
+
+
+        var dupArray = [2, 2, 3, 'abc', 'b', 4, 'a', 5, 5, 6, 'a', 7, 'b'];
+
+        function removeDup (arr) {
+         
+            var result = [], flag;
+
+            result.push(arr[0]);
+
+            for( var i = 1; i < arr.length; i++)
+            {
+            	flag = 0;
+            	for( var j = 0; j < result.length; j++)
+            	{
+            		if( arr[i] == result[j])
+            	    {
+            	      	flag = 1; break;
+            	    }
+                }
+               if(flag == 0)
+               	result.push(arr[i]);
+            }
+            console.log('Original array = '+arr);
+            console.log('After removing duplicates = '+result);
+        }
+        removeDup(dupArray);
+
+
+
+  // Exercise_15
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
